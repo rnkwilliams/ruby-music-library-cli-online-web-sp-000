@@ -8,11 +8,11 @@ module Concerns::Findable
   end
 
   def sort_songs
-        counter = 1
-        sorted_array = self.all.uniq.sort_by{|t|t.name}
-        sorted_array.map do |u|
-          puts "#{counter}. #{u.name}"
-          counter += 1
-        end
+    counter = 1
+    sorted_array = self.all.uniq.sort_by{|t|t.name}
+    sorted_array.map do |u|
+      puts "#{counter}. #{u.name}"
+      counter += 1
+    end
   end
 end
