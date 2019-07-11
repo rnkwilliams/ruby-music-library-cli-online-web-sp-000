@@ -51,7 +51,7 @@ end
     user_input = gets.strip
     if artist = Artist.find_by_name(input)
       sorted_array = artist.songs.sort{|a,b| a.name <=> b.name}
-      sorted_array.each_with_index do |song, index| 
+      sorted_array.each_with_index do |song, index|
         puts "#{index+1}. #{song.name} - #{song.genre.name}"
       end
    end
