@@ -58,7 +58,7 @@ end
    end
 
    def list_songs_by_genre
-     puts "Please enter the name of an genre:"
+     puts "Please enter the name of a genre:"
      user_input = gets.strip
      if genre = Genre.find_by_name(user_input)
        sorted_array = genre.songs.sort{|a,b| a.name <=> b.name}
