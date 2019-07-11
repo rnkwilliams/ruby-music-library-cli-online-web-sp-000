@@ -43,6 +43,6 @@ end
   end
 
   def list_genres
-    Genres.sort_songs
+    Genre.sort_songs
   end
 end
