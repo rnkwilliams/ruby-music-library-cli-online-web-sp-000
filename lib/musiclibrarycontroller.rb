@@ -69,7 +69,14 @@ end
     end
 
     def play_song
-      
+      puts "Which song number would you like to play?"
+      user_input = gets.strip
+      alphabetized_songs = Song.all.uniq.sort_by{|s|s.name}
+      alphabetized_songs.each_with_index do |song, index|
+        if user_input.to_i-1 == index
+          puts "Playing #{song.name} by #{song.artist.name}"
+        end
+      end
     end
 
 
