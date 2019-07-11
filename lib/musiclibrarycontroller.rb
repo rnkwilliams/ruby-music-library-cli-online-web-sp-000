@@ -45,4 +45,8 @@ end
   def list_genres
     Genre.sort_songs
   end
+
+  def list_songs_by_artist
+    
+  end
 end
