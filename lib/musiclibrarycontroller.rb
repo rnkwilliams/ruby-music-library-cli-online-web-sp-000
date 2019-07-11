@@ -61,12 +61,14 @@ end
      puts "Please enter the name of a genre:"
      user_input = gets.strip
      if genre = Genre.find_by_name(user_input)
-       sorted_array = genre.songs.sort{|a,b| a.name <=> b.name}
-       sorted_array.each_with_index do |song, index|
+       genre_sorted_array = genre.songs.sort{|a,b| a.name <=> b.name}
+       genre_sorted_array.each_with_index do |song, index|
          puts "#{index+1}. #{song.name} - #{song.genre.name}"
          end
        end
     end
+
+    
 
 
 end
