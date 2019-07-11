@@ -46,6 +46,7 @@ end
     Genre.sort_songs
   end
 
+  #prompts the user to enter an artist
   def list_songs_by_artist
     puts "Please enter the name of an artist:"
     user_input = gets.strip
@@ -57,6 +58,7 @@ end
       end
    end
 
+   #prompts the user to enter a genre
    def list_songs_by_genre
      puts "Please enter the name of a genre:"
      user_input = gets.strip
@@ -68,6 +70,7 @@ end
        end
     end
 
+    #prompts the user to choose a song from the alphabetized list output by #list_songs
     def play_song
       puts "Which song number would you like to play?"
       user_input = gets.strip
