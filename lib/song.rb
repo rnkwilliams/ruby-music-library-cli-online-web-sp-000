@@ -1,5 +1,3 @@
-
-
 class Song
   attr_accessor :name, :artist, :genre
 
@@ -51,4 +49,25 @@ class Song
   def self.find_or_create_by_name(name)
     self.find_by_name(name) || self.create(name)
   end
+
+  def self.new_from_filename(filename)
+    separated_file = filename.gsub(".mp3", "").split(" - ")
+    artist = Artist.find_or_create_by_name(separated_file[0])
+    genre = Genre.find_or_create_by_name(separated_file[2])
+    self.new(separated_file[1], artist, genre)
+  end
+
+  def self.create_from_filename(filename)
+    self.new_from_filename(filename).save
+  end
+
+  #Class method that is used to sort for method 'list_songs' in MusicLibraryController CLI methods.
+  def self.sort_songs
+      counter = 1
+      sorted_array = self.all.uniq.sort_by{|s|s.name}
+      sorted_array.map do |e|
+        puts "#{counter}. #{e.artist.name} - #{e.name} - #{e.genre.name}"
+        counter += 1
+       end
+    end
 end
